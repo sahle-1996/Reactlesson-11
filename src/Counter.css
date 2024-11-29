@@ -1,51 +1,101 @@
 .counter-container {
   max-width: 400px;
+  width: 90%; /* Better responsiveness */
   margin: 50px auto;
-  padding: 20px;
-  background-color: #f7f7f7;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  padding: 25px;
+  background-color: #f9f9fc; /* Slightly softer background */
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.1), 
+    0 6px 10px rgba(0, 0, 0, 0.05); /* Enhanced shadow with subtle depth */
+  border-radius: 12px; /* Slightly larger border radius */
   text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: transform 0.3s ease; /* Subtle hover effect */
+}
+
+.counter-container:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
 }
 
 .counter-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #2c3e50; /* Deeper, more modern text color */
+  font-weight: 600; /* Slightly bolder */
 }
 
 .counter-display {
-  font-size: 32px;
-  margin: 20px 0;
-  font-weight: bold;
-  color: #007bff;
+  font-size: 48px; /* Larger display */
+  margin: 25px 0;
+  font-weight: 700; /* Bold */
+  color: #3498db; /* Brighter, more vibrant blue */
+  letter-spacing: -1px; /* Tighter letter spacing for large numbers */
 }
 
 .counter-controls {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  gap: 15px; /* Slightly wider gap */
 }
 
 .counter-btn {
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 16px;
   color: white;
-  background-color: #007bff;
+  background-color: #3498db; /* Consistent, vibrant blue */
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease; /* Smoother transitions */
+  text-transform: uppercase; /* Uppercase buttons */
+  font-weight: 600;
 }
 
 .counter-btn:hover {
-  background-color: #0056b3;
+  background-color: #2980b9; /* Slightly darker on hover */
+  transform: scale(1.05); /* Subtle scale effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+.counter-btn:active {
+  transform: scale(0.95); /* Slight press effect */
 }
 
 .counter-btn.reset {
-  background-color: #dc3545;
+  background-color: #e74c3c; /* Modern, vibrant red */
 }
 
 .counter-btn.reset:hover {
-  background-color: #a71d2a;
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+  .counter-container {
+    width: 95%;
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .counter-title {
+    font-size: 22px;
+  }
+
+  .counter-display {
+    font-size: 36px;
+  }
+
+  .counter-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .counter-btn {
+    width: 100%;
+    padding: 10px;
+  }
 }
